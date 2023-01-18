@@ -14,17 +14,18 @@ _G.Autoleave = false
 end
 
 function Checkarea()
+    while wait() do
     pcall(function()
 if game:GetService("Workspace")["_waves_started"].value == true then 
 
     _G.Autoleave = true
     else
         CheckServ()
-       end
-    end)
-end
-end
-
+               end
+            end)
+         end
+         end
+        end
 
 
 
@@ -33,8 +34,10 @@ if _G.hoppserv == true then do
                     pcall(function()
                         if game:GetService("Players").LocalPlayer.AlreadyInLobby.Name == "AlreadyInLobby"then
                         if jobidmain ~= jobid then
+                            while wait() do
                         TeleportService:TeleportToPlaceInstance(8304191830, jobid)
                         _G.hoppserv = false
+                        end
                         end
                 else
                     Checkarea()
@@ -45,12 +48,13 @@ if _G.hoppserv == true then do
 
 Checkarea()
 if _G.Autoleave == true then
-
-    local CheckEnd = game:GetService("Workspace")["_DATA"].GameFinished
+        local CheckEnd = game:GetService("Workspace")["_DATA"].GameFinished
+			while wait() do
                         if CheckEnd.Value == true then do
                             game:GetService("ReplicatedStorage").endpoints.client_to_server.teleport_back_to_lobby:InvokeServer()
                         end
                         end
+end
 
 
 end
