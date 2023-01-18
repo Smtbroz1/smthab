@@ -1,0 +1,56 @@
+local TeleportService = game:GetService("TeleportService")
+local jobidmain = tostring(game.JobId)
+jobid = "68eb4808-2bcf-418e-80ce-1fb9502fdce3"
+
+_G.hoppserv = true
+_G.Autoleave = false
+
+
+function CheckServ()
+if jobidmain ~= jobid then do
+_G.hoppserv = true
+_G.Autoleave = false
+    end
+end
+
+function Checkarea()
+    pcall(function()
+if game:GetService("Workspace")["_waves_started"].value == true then 
+
+    _G.Autoleave = true
+    else
+        CheckServ()
+       end
+    end)
+end
+end
+
+
+
+
+CheckServ()
+if _G.hoppserv == true then do
+                    pcall(function()
+                        if game:GetService("Players").LocalPlayer.AlreadyInLobby.Name == "AlreadyInLobby"then
+                        if jobidmain ~= jobid then
+                        TeleportService:TeleportToPlaceInstance(8304191830, jobid)
+                        _G.hoppserv = false
+                        end
+                else
+                    Checkarea()
+                end
+            end)
+        end
+    end
+
+Checkarea()
+if _G.Autoleave == true then
+
+    local CheckEnd = game:GetService("Workspace")["_DATA"].GameFinished
+                        if CheckEnd.Value == true then do
+                            game:GetService("ReplicatedStorage").endpoints.client_to_server.teleport_back_to_lobby:InvokeServer()
+                        end
+                        end
+
+
+end
