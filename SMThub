@@ -22,7 +22,6 @@ spawn(function()
             if game:GetService("Workspace")["_waves_started"].Value == true then 
             _G.Autoleave = true
             else
-                CheckServ()
             end
             end)
             end
@@ -32,7 +31,7 @@ spawn(function()
 
 
 spawn(function()
-if _G.hoppserv == true then do
+if getgenv().hoppserv == true then do
     wait(0.2)
                     pcall(function()
                         wait(0.3)
@@ -44,7 +43,7 @@ if _G.hoppserv == true then do
                         end
                         end
                 else
-                    Checkarea()
+
                 end
             end)
         end
