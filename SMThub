@@ -1,6 +1,6 @@
 local TeleportService = game:GetService("TeleportService")
 local jobidmain = tostring(game.JobId)
-jobid = "68eb4808-2bcf-418e-80ce-1fb9502fdce3"
+jobid = "24f842d4-c2b0-430f-87b2-7520e814f54e"
 
 getgenv().hoppserv = true
 getgenv().Autoleave = true
