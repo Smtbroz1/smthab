@@ -1,19 +1,15 @@
 local TeleportService = game:GetService("TeleportService")
 local jobidmain = tostring(game.JobId)
-jobid = "24f842d4-c2b0-430f-87b2-7520e814f54e"
+jobid = "b3cb8f1d-b06c-4f7c-b168-1ddb3dd59eed"
 
 getgenv().hoppserv = true
 getgenv().Autoleave = true
 
-spawn(function()
-    while wait(0) do
 if jobidmain ~= jobid then do
 _G.hoppserv = true
 _G.Autoleave = false
     end
 end
-end
-end)
 
 
 spawn(function()
