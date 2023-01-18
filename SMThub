@@ -25,7 +25,8 @@ spawn(function()
 
  
 
-
+spawn(function()
+    while wait(0) do
 if _G.hoppserv == true then do
     wait(0.2)
                     pcall(function()
@@ -41,7 +42,9 @@ if _G.hoppserv == true then do
                 end
             end)
         end
-    end
+end
+end
+end)
 
 spawn(function()
         pcall(function()
