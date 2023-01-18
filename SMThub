@@ -30,8 +30,7 @@ spawn(function()
  
 
 
-spawn(function()
-if getgenv().hoppserv == true then do
+if _G.hoppserv == true then do
     wait(0.2)
                     pcall(function()
                         wait(0.3)
@@ -43,12 +42,10 @@ if getgenv().hoppserv == true then do
                         end
                         end
                 else
-
                 end
             end)
         end
-end
-end)
+    end
 
 spawn(function()
         pcall(function()
